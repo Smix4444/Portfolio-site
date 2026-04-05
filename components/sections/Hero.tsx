@@ -1,85 +1,58 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
-import { ContainerScroll } from '@/components/ui/container-scroll-animation';
-import { motion } from 'framer-motion';
+import { WebGLShader } from '@/components/ui/web-gl-shader';
+import { LiquidButton } from '@/components/ui/liquid-glass-button';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative bg-[#0f0f0f]">
-      {/* Subtle top gradient */}
-      <div className="absolute inset-x-0 top-0 h-px bg-[#2a2a2a]" />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* WebGL animated background */}
+      <WebGLShader />
 
-      <ContainerScroll
-        titleComponent={
-          <div className="flex flex-col items-center gap-4">
-            {/* Mono label */}
-            <motion.span
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="section-label"
-            >
-              Mohamed Rayan Benchekroun
-            </motion.span>
+      {/* Content overlay */}
+      <div className="relative z-10 border border-[#27272a] p-2 w-full mx-auto max-w-3xl">
+        <main className="relative border border-[#27272a] py-10 overflow-hidden">
+          {/* Mono label */}
+          <p className="text-white/40 text-center text-xs md:text-sm tracking-[0.2em] uppercase font-mono mb-4">
+            Mohamed Rayan Benchekroun
+          </p>
 
-            {/* Main headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[2.8rem] md:text-[5.5rem] font-black leading-[0.92] tracking-[-0.04em] text-[#f5f5f5] max-w-4xl"
-            >
-              Unleash the power of
-              <br />
-              <span className="text-white">Cybersecurity</span>
-              <br />
-              <span className="text-[#888]">&amp; Analytics</span>
-            </motion.h1>
+          {/* Main headline */}
+          <h1 className="mb-3 text-white text-center text-5xl sm:text-7xl font-extrabold tracking-tighter md:text-[clamp(2rem,8vw,7rem)]">
+            Cybersecurity
+            <br />
+            <span className="text-white/50">&amp; Analytics</span>
+          </h1>
 
-            {/* Sub-line */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-[#888] text-sm md:text-base font-normal tracking-wide"
-            >
-              3rd-Year Student · AP Hogeschool Antwerpen · Available Mon–Wed
-            </motion.p>
+          {/* Sub-line */}
+          <p className="text-white/60 px-6 text-center text-xs md:text-sm lg:text-lg">
+            3rd-Year Student · AP Hogeschool Antwerpen · Available Mon–Wed
+          </p>
 
-            {/* CTA buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.55 }}
-              className="flex gap-3 mt-2"
-            >
-              <a
-                href="#projects"
-                className="px-5 py-2.5 bg-[#f5f5f5] text-[#0f0f0f] text-sm font-semibold tracking-wide rounded-sm hover:bg-white transition-colors"
-              >
-                View Projects
-              </a>
-              <a
-                href="#contact"
-                className="px-5 py-2.5 border border-[#2a2a2a] text-[#f5f5f5] text-sm font-semibold tracking-wide rounded-sm hover:border-[#555] hover:bg-[#1a1a1a] transition-colors"
-              >
-                Contact Me
-              </a>
-            </motion.div>
+          {/* Status badge */}
+          <div className="my-8 flex items-center justify-center gap-1">
+            <span className="relative flex h-3 w-3 items-center justify-center">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+            </span>
+            <p className="text-xs text-green-500">Available for New Projects</p>
           </div>
-        }
-      >
-        <Image
-          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=80"
-          alt="Dark server room with glowing network cables"
-          width={1400}
-          height={720}
-          className="mx-auto rounded-2xl object-cover h-full w-full object-center"
-          priority
-          unoptimized
-        />
-      </ContainerScroll>
+
+          {/* CTA buttons */}
+          <div className="flex justify-center gap-4">
+            <a href="#projects">
+              <LiquidButton className="text-white border rounded-full" size={'xl'}>
+                View Projects
+              </LiquidButton>
+            </a>
+            <a href="#contact">
+              <LiquidButton className="text-white border rounded-full" size={'xl'}>
+                Contact Me
+              </LiquidButton>
+            </a>
+          </div>
+        </main>
+      </div>
     </section>
   );
 }
