@@ -173,12 +173,13 @@ body::after {
 }
 
 .hero-section > .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
 }
 
 .content {
@@ -225,18 +226,20 @@ body::after {
   z-index: 1;
 }
 
-/* Override the generic .container inside hero context to avoid conflicts */
+/* Override Tailwind's .container inside the cube — needs !important to win */
 .container-full > .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  perspective: 800px;
-  z-index: 2;
-  max-width: none;
-  padding: 0;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 200px !important;
+  max-width: 200px !important;
+  height: 200px !important;
+  perspective: 800px !important;
+  z-index: 2 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
 }
 
 .container-reflect {
