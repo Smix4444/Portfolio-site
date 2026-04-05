@@ -31,8 +31,8 @@ const contactLinks = [
   {
     icon: GitBranch,
     label: 'GitHub',
-    value: 'View repositories',
-    href: 'https://github.com/projects?query=is%3Aopen+creator%3A%40me',
+    value: 'Smix4444',
+    href: 'https://github.com/Smix4444',
   },
 ];
 
@@ -58,7 +58,7 @@ export default function Contact() {
         >
           <span className="section-label">Contact</span>
           <div className="flex-1 h-px bg-[#2a2a2a]" />
-          <span className="section-label">05</span>
+          <span className="section-label">06</span>
         </motion.div>
 
         {/* Big headline */}
@@ -79,7 +79,7 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-[#888] text-sm mono mb-16 max-w-md"
+          className="text-[#888] text-sm font-mono mb-16 max-w-md"
         >
           Available Mon–Wed for student roles. Open to cybersecurity, IT support, or customer-facing positions in Antwerp.
         </motion.p>
@@ -88,10 +88,13 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
           {contactLinks.map((link, i) => {
             const Inner = (
-              <div className="flex items-center gap-4 border border-[#2a2a2a] rounded-sm p-5 hover:border-[#444] hover:bg-[#1a1a1a] transition-all group cursor-pointer">
-                <link.icon size={18} className="text-[#555] group-hover:text-[#f5f5f5] transition-colors flex-shrink-0" />
-                <div>
-                  <div className="text-xs text-[#555] mono mb-0.5">{link.label}</div>
+              <div className="group flex items-center gap-4 border border-[#2a2a2a] rounded-lg p-5 hover:border-[#444] hover:bg-[#1a1a1a]/50 transition-all cursor-pointer relative overflow-hidden">
+                {/* Hover glow */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br from-[#9c40ff]/5 to-transparent pointer-events-none" />
+                
+                <link.icon size={18} className="text-[#555] group-hover:text-[#f5f5f5] transition-colors flex-shrink-0 relative z-10" />
+                <div className="relative z-10">
+                  <div className="text-xs text-[#555] font-mono mb-0.5">{link.label}</div>
                   <div className="text-sm text-[#f5f5f5] font-medium">{link.value}</div>
                 </div>
               </div>
@@ -119,8 +122,8 @@ export default function Contact() {
 
         {/* Footer bar */}
         <div className="border-t border-[#2a2a2a] pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <span className="text-[#555] text-xs mono">© 2025 Mohamed Rayan Benchekroun</span>
-          <span className="text-[#555] text-xs mono">Deurne, Antwerpen · AP Hogeschool</span>
+          <span className="text-[#555] text-xs font-mono">© 2026 Mohamed Rayan Benchekroun</span>
+          <span className="text-[#555] text-xs font-mono">Deurne, Antwerpen · AP Hogeschool</span>
         </div>
       </div>
     </footer>

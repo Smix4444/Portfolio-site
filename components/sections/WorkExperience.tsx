@@ -39,7 +39,7 @@ const jobs = [
 
 export default function WorkExperience() {
   return (
-    <section id="experience" className="relative bg-[#0f0f0f] py-24">
+    <section id="experience" className="relative bg-[#0f0f0f] py-24 border-t border-[#2a2a2a]">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -51,7 +51,7 @@ export default function WorkExperience() {
         >
           <span className="section-label">Experience</span>
           <div className="flex-1 h-px bg-[#2a2a2a]" />
-          <span className="section-label">02</span>
+          <span className="section-label">03</span>
         </motion.div>
 
         {/* Title */}
@@ -76,33 +76,33 @@ export default function WorkExperience() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: 'easeInOut' }}
             style={{ originY: 0 }}
-            className="absolute left-0 md:left-[200px] top-0 bottom-0 w-px bg-[#2a2a2a]"
+            className="absolute left-0 md:left-[200px] top-0 bottom-0 w-px bg-gradient-to-b from-[#ffaa40]/50 via-[#2a2a2a] to-[#2a2a2a]"
           />
 
           <div className="space-y-16">
             {jobs.map((job, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="relative flex flex-col md:flex-row gap-6 md:gap-12"
               >
                 {/* Date column */}
                 <div className="md:w-[200px] md:text-right flex-shrink-0 pt-1">
-                  <span className="mono text-[#555] text-xs tracking-widest">{job.period}</span>
+                  <span className="font-mono text-[#555] text-xs tracking-widest">{job.period}</span>
                 </div>
 
                 {/* Dot on timeline */}
-                <div className="absolute left-[-5px] md:left-[196px] top-[6px] w-[9px] h-[9px] rounded-full bg-[#0f0f0f] border-2 border-[#555]" />
+                <div className="absolute left-[-5px] md:left-[196px] top-[6px] w-[9px] h-[9px] rounded-full bg-[#0f0f0f] border-2 border-[#555] group-hover:border-[#ffaa40] transition-colors" />
 
                 {/* Content */}
-                <div className="md:pl-12 flex-1">
+                <div className="md:pl-12 flex-1 group">
                   <div className="flex flex-wrap items-baseline gap-2 mb-2">
                     <h3 className="text-xl font-bold text-[#f5f5f5] tracking-tight">{job.role}</h3>
                     <span className="text-[#888] text-sm">@ {job.company}</span>
-                    <span className="text-[#555] text-xs mono">· {job.location}</span>
+                    <span className="text-[#555] text-xs font-mono">· {job.location}</span>
                   </div>
                   <p className="text-[#888] text-sm leading-relaxed mb-4 max-w-lg">
                     {job.description}
@@ -111,7 +111,7 @@ export default function WorkExperience() {
                     {job.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-2.5 py-0.5 border border-[#2a2a2a] text-[#888] text-xs mono rounded-sm hover:border-[#555] hover:text-[#f5f5f5] transition-colors"
+                        className="px-2.5 py-0.5 border border-[#2a2a2a] text-[#888] text-xs font-mono rounded-full hover:border-[#555] hover:text-[#f5f5f5] transition-colors"
                       >
                         {skill}
                       </span>
