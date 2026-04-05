@@ -19,13 +19,27 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Mohamed Rayan Benchekroun — Cybersecurity Student',
+  title: 'Mohamed Rayan Benchekroun — Cybersecurity & IT Portfolio',
   description:
-    '3rd-year Cybersecurity student at AP Hogeschool Antwerpen. Analytical, customer-oriented, multilingual. Available Mon–Wed for student roles.',
+    'Portfolio of Rayan Benchekroun — 3rd-year Cybersecurity student at AP Hogeschool Antwerpen. Penetration testing, network security, vulnerability assessment. Multilingual (NL/EN/AR/FR). Available Mon–Wed.',
+  keywords: [
+    'cybersecurity', 'penetration testing', 'network security', 'ethical hacking',
+    'AP Hogeschool Antwerpen', 'portfolio', 'Mohamed Rayan Benchekroun',
+    'vulnerability assessment', 'IT security', 'Antwerpen',
+  ],
+  authors: [{ name: 'Mohamed Rayan Benchekroun' }],
+  robots: { index: true, follow: true },
   openGraph: {
-    title: 'Mohamed Rayan Benchekroun',
-    description: 'Cybersecurity student · AP Hogeschool Antwerpen',
+    title: 'Mohamed Rayan Benchekroun — Cybersecurity Portfolio',
+    description: 'Cybersecurity student · Penetration testing · Network security · AP Hogeschool Antwerpen',
     type: 'website',
+    locale: 'en_BE',
+    siteName: 'MRB Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mohamed Rayan Benchekroun — Cybersecurity Portfolio',
+    description: 'Cybersecurity student · AP Hogeschool Antwerpen · Available Mon–Wed',
   },
 };
 

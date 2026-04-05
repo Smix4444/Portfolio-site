@@ -1,14 +1,14 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, GitBranch, Shield, Terminal, Globe, Server } from 'lucide-react';
+import { ExternalLink, GitBranch, Shield, Terminal, Globe, Server, Lock, Eye } from 'lucide-react';
 
 const projects = [
   {
     id: 'traffic-analyzer',
     title: 'Network Traffic Analyzer',
-    description: 'Python-based packet analysis tool for capturing and visualising network traffic patterns, identifying anomalies, and generating security reports.',
-    tags: ['Python', 'Wireshark', 'Scapy', 'Data Visualisation'],
+    description: 'Python tool using Scapy and dpkt for real-time packet capture, protocol dissection, and anomaly detection. Exports PCAP reports with flagged suspicious payloads and DNS exfiltration attempts.',
+    tags: ['Python', 'Scapy', 'Wireshark', 'PCAP'],
     icon: Shield,
     url: 'https://github.com/Smix4444',
     accent: 'from-blue-500/10',
@@ -16,8 +16,8 @@ const projects = [
   {
     id: 'vuln-scanner',
     title: 'Vulnerability Scanner Dashboard',
-    description: 'Web dashboard aggregating vulnerability scan results from Nmap and OpenVAS, with severity scoring and remediation tracking.',
-    tags: ['React', 'Python', 'REST API', 'Nmap'],
+    description: 'React dashboard aggregating Nmap and OpenVAS scan results via REST API. Implements CVSS scoring, tracks remediation status, and generates compliance-ready PDF reports.',
+    tags: ['React', 'Python', 'Nmap', 'OpenVAS', 'CVSS'],
     icon: Terminal,
     url: 'https://github.com/Smix4444',
     accent: 'from-purple-500/10',
@@ -25,17 +25,35 @@ const projects = [
   {
     id: 'homelab',
     title: 'Home Lab Infrastructure',
-    description: 'Self-hosted lab environment running Proxmox with containerised services — pfSense firewall, Wazuh SIEM, Active Directory domain, and monitoring stack.',
-    tags: ['Proxmox', 'Docker', 'pfSense', 'Wazuh'],
+    description: 'Proxmox hypervisor running segmented VLANs — pfSense firewall with Suricata IDS, Wazuh SIEM for log aggregation, Active Directory domain, and Grafana monitoring stack.',
+    tags: ['Proxmox', 'pfSense', 'Wazuh', 'Suricata', 'Docker'],
     icon: Server,
     url: 'https://github.com/Smix4444',
     accent: 'from-green-500/10',
   },
   {
+    id: 'password-auditor',
+    title: 'Password Strength Auditor',
+    description: 'CLI tool analysing password hashes against common wordlists and rule-based mutations. Integrates with hashcat and John the Ripper for benchmarking enterprise password policies.',
+    tags: ['Python', 'Hashcat', 'John the Ripper', 'Bash'],
+    icon: Lock,
+    url: 'https://github.com/Smix4444',
+    accent: 'from-red-500/10',
+  },
+  {
+    id: 'phishing-platform',
+    title: 'Phishing Awareness Platform',
+    description: 'Internal training tool simulating phishing campaigns for security awareness. Tracks click rates, credential submissions, and generates per-department risk scores.',
+    tags: ['Next.js', 'PostgreSQL', 'Social Engineering', 'Email'],
+    icon: Eye,
+    url: 'https://github.com/Smix4444',
+    accent: 'from-yellow-500/10',
+  },
+  {
     id: 'portfolio',
     title: 'Portfolio Website',
-    description: 'This site — built with Next.js 16, Three.js WebGL shaders, Magic UI components, Framer Motion animations, and deployed on Vercel.',
-    tags: ['Next.js', 'Three.js', 'Framer Motion', 'Tailwind CSS'],
+    description: 'This site — Next.js 16 with WebGL shaders, Magic UI components, security-hardened headers (HSTS, CSP, X-Frame-Options), and automated Vercel CI/CD pipeline.',
+    tags: ['Next.js', 'Three.js', 'Framer Motion', 'CSP'],
     icon: Globe,
     url: 'https://github.com/Smix4444/Portfolio-site',
     accent: 'from-orange-500/10',
@@ -71,7 +89,7 @@ export default function Projects() {
         </motion.h2>
 
         {/* Projects grid */}
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, i) => (
             <motion.a
               key={project.id}

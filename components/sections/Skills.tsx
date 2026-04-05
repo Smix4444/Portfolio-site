@@ -5,7 +5,8 @@ import { DotPattern } from '@/components/ui/dot-pattern';
 import {
   Users, Zap, RefreshCw, MessageCircle,
   Shield, Terminal, Wifi, Code, Server, Eye,
-  Database, Lock, Container, MonitorSmartphone, Globe, GitBranch
+  Database, Lock, Container, MonitorSmartphone, Globe, GitBranch,
+  Bug, Search
 } from 'lucide-react';
 
 const languages = [
@@ -32,6 +33,8 @@ const technicalSkills = [
   { icon: Globe, name: 'React / Next.js', category: 'Web Dev' },
   { icon: Server, name: 'Active Directory', category: 'Admin' },
   { icon: Shield, name: 'SIEM Tools', category: 'Monitoring' },
+  { icon: Bug, name: 'Burp Suite', category: 'Web PenTest' },
+  { icon: Search, name: 'Splunk', category: 'Log Analysis' },
 ];
 
 const softSkills = [

@@ -2,13 +2,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { DotPattern } from '@/components/ui/dot-pattern';
-import { GraduationCap, BookOpen, Shield, Terminal } from 'lucide-react';
+import { GraduationCap, BookOpen, Shield, Terminal, Search, AlertTriangle } from 'lucide-react';
 
 const coursework = [
   { icon: Shield, name: 'Network Security', desc: 'Firewalls, IDS/IPS, traffic analysis, and secure network architecture design' },
   { icon: Terminal, name: 'Ethical Hacking', desc: 'Penetration testing methodology, vulnerability assessment, and exploit development' },
   { icon: BookOpen, name: 'System Administration', desc: 'Linux/Windows server management, Active Directory, and infrastructure hardening' },
   { icon: GraduationCap, name: 'Digital Forensics', desc: 'Evidence collection, incident response procedures, and malware analysis fundamentals' },
+  { icon: AlertTriangle, name: 'Incident Response', desc: 'NIST framework, threat containment, eradication procedures, and post-incident reporting' },
+  { icon: Search, name: 'OSINT & Threat Intel', desc: 'Open-source intelligence gathering, threat landscape analysis, and IOC identification' },
 ];
 
 export default function Education() {
@@ -72,7 +74,7 @@ export default function Education() {
           Key Coursework
         </motion.h3>
 
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {coursework.map((course, i) => (
             <motion.div
               key={course.name}
